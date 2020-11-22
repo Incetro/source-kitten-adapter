@@ -5,6 +5,14 @@ import PackageDescription
 
 let package = Package(
     name: "source-kitten-adapter",
+    products: [
+        .library(
+            name: "SourceKittenAdapter",
+            targets: [
+                "source-kitten-adapter"
+            ]
+        ),
+    ],
     dependencies: [
         .package(
             name: "Files",
