@@ -12,6 +12,11 @@ import Foundation
 // MARK: - SourceKittenAdapterImplementation
 
 public final class SourceKittenAdapterImplementation {
+
+    // MARK: - Initializers
+
+    public init() {
+    }
 }
 
 // MARK: - SourceKittenAdapterImplementation
