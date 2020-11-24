@@ -64,9 +64,11 @@ extension SourceKittenAdapterImplementation: SourceKittenAdapter {
         guard let data = try sourceKitContentFile.readAsString().data(using: .utf8) else {
             fatalError()
         }
-        guard let json = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? JSONDictionary else {
+        guard var json = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? JSONDictionary else {
             fatalError()
         }
+
+        json[targetFile.path] = json[workingFileCopy.path]
 
         /// Clear output files
         try sourceKitContentFile.delete()
